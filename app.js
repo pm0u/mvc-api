@@ -15,4 +15,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/snacks', snackRouter)
 
+const post = process.env.PORT || 3000
+
 module.exports = app
