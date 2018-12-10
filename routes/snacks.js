@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
+const ctrl = require('../controllers/snacks')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
 
-});
+router.get('/', ctrl.getAll)
+//router.get('/:id', ctrl.getOne)
+//router.post('/', ctrl.post)
+//router.put('/:id', ctrl.update)
+//router.delete('/:id', ctrl.delete)
 
-module.exports = router;
+module.exports = router
