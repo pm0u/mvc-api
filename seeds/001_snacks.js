@@ -8,6 +8,10 @@ exports.seed = function(knex, Promise) {
         { id: 1, name: 'Popcorn', type: 'salty'},
         { id: 2, name: 'Candy Corn', type: 'sweet'},
         { id: 3, name: 'Chocolate Bar', type: 'chocolate'}
-      ]);
-    });
-};
+      ])
+    }).then(() => {
+        return knex.raw(
+          `SELECT setval('snacks_id_seq', (SELECT MAX(id) FROM snacks));`
+        )
+    })
+}
